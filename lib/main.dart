@@ -142,8 +142,10 @@ class TelaHome extends StatelessWidget{
           padding: const EdgeInsets.all(2.0),
           child: Column(
             children: [
-              SizedBox(
-                child: Image.asset("assets/imagem_ProfessorHome.jpg")
+              Container(
+                height: 100,
+                width: double.infinity,
+                child: Image.asset("assets/imagem_ProfessorHome.jpg", fit: BoxFit.cover),
               ),
               
               Container(
@@ -176,10 +178,11 @@ class TelaHome extends StatelessWidget{
                 color: const Color.fromRGBO(69, 209, 127, 1),
                 width: 500,
                 child: const Text(
-                  "Seja bem vindo, professor Leonardo Carvalho",
+                  "Seja bem vindo!",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ), 
