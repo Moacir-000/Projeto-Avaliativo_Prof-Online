@@ -11,14 +11,16 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // Título da guia do aplicativo
       title: "Professor Online - Projeto",
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
+      // Rotas da aplicação
       initialRoute: "/telaLogin",
       routes: {
-        "/telaLogin":(context) => const TelaLogin(),
-        "/telaHome":(context) => const TelaHome()
+        "/telaLogin": (context) => const TelaLogin(),
+        "/telaHome": (context) => const TelaHome()
       },
     );
   }
@@ -33,9 +35,11 @@ class TelaLogin extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 47, 138, 98),
+        // Padding com finalidade de espaçamento dos elementos
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            // Deixar os elementos da coluna no centro
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset("assets/logo_ProfessorOnline.png"),
@@ -43,6 +47,7 @@ class TelaLogin extends StatelessWidget{
               const SizedBox(height: 30),
 
               TextFormField(
+                // Responsável pela decoração do campo de texto
                 decoration: const InputDecoration(
                   icon: Icon(Icons.person, color: Color.fromARGB(167, 255, 255, 255)),
                   label: Text("CPF:", style: TextStyle(color: Colors.white)),
@@ -88,12 +93,14 @@ class TelaLogin extends StatelessWidget{
                     )
                   ),
                   onPressed: () {
+                    // Ao pressionar no botão, ele irá para a inserida.
                     Navigator.pushNamed(context, "/telaHome");
                   }, 
                   child: const Text("Entrar", style: TextStyle(color: Colors.white))
                 )
               ),
 
+              // Criação de uma linha de separação
               const Divider(),
 
               Row(
